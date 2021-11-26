@@ -1,7 +1,16 @@
 import type { NextPage } from 'next'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import handler from './api/hello'
+
+// const Form = dynamic(
+//   import('./Form'),
+//   {
+//     ssr: false   //这个要加上,禁止使用 SSR
+//   }
+// )
 
 const Home: NextPage = () => {
   return (
@@ -14,8 +23,12 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+         欢迎来到 表单星!
         </h1>
+
+        {/* <Form /> */}
+
+        <button onClick={() => console.log(1)}>jjj</button>
 
         <p className={styles.description}>
           Get started by editing{' '}
